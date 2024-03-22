@@ -1,0 +1,128 @@
+.body {
+  height: 1000px;
+}
+.image-area {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+.text-area {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.fixed {
+  height: 50px;
+  width: 100%;
+  background-color: blueviolet;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.static {
+  height: 200px;
+  width: 100%;
+  background-color: yellow;
+  position: static;
+}
+.relative {
+  height: 300px;
+  width: 100%;
+  background-color: green;
+  position: relative;
+}
+.absolute {
+  height: 200px;
+  width: 50%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  right: 0;
+  top: 300px;
+}
+.static {
+  height: 300px;
+  width: 100%;
+  background-color: orange;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+}
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  overflow: hidden;
+  gap: 10px;
+}
+.container .box {
+  width: 100%;
+}
+.container .box .image img {
+  width: 100%;
+}
+.animation-area {
+  height: 400px;
+  width: 100%;
+}
+.animation-area .animation-box {
+  height: 400px;
+  width: 400px;
+  background-color: black;
+  animation: sliding 1s ease-in-out 1s infinite;
+}
+@keyframes sliding {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.flex {
+  display: flex;
+}
+.bounce {
+  height: 400px;
+  width: 100%;
+}
+.bounce .circle {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: blue;
+  animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0%);
+    background-color: black;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@media only screen and(max-width:767px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and(max-width:528px) {
+  .container {
+    grid-template-columns: (repeat, 1fr);
+  }
+}
+
+@media only screen and(max-width:360px) {
+  .container {
+    grid-template-columns: (repeat, 1fr);
+  }
+}
